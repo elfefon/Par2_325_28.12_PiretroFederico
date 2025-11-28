@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SistemaCine.Controlador.RegisterViewController">
+   <center>
+      <VBox fx:id="root" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="lblNombre" text="Nombre de usuario" />
+            <TextField fx:id="txtNombre" maxWidth="-Infinity" />
+            <Label fx:id="lblMail" text="Mail" />
+            <TextField fx:id="txtEmail" maxWidth="-Infinity" />
+            <Label fx:id="lblPass" text="Contraseña" />
+            <PasswordField fx:id="txtPassword" maxWidth="-Infinity" />
+            <Hyperlink fx:id="linkLogin" onAction="#eventoIrALogin" text="Ya tienes una cuenta? ingresa aqui!" />
+            <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#eventoRegistrar" text="Crear cuenta" />
+            <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#eventoSalir" prefHeight="25.0" prefWidth="82.0" text="Salir" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>
