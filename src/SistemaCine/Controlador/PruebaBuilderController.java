@@ -93,13 +93,7 @@ public class PruebaBuilderController implements Initializable {
             // mostrar la ventana
             Stage stageActual = (Stage) scrollCarrusel.getScene().getWindow();
 
-            // 2. CAMBIAMOS LA ESCENA EN LA MISMA VENTANA
             Scene scene = new Scene(root);
-
-            // (Opcional) Si quieres mantener el estilo oscuro, agrega el CSS aquí también
-            try {
-                scene.getStylesheets().add(getClass().getResource("/estilos/cine.css").toExternalForm());
-            } catch (Exception e) {}
 
             stageActual.setScene(scene);
             stageActual.setTitle("Sala: " + peliSeleccionada.getTitulo());
