@@ -74,8 +74,8 @@ public class RegisterViewController implements Initializable {
         Navegador.irA(event, Rutas.VISTA_LOGIN, "Iniciar Sesión");
 }
     @FXML
-    private void eventoSalir(ActionEvent event) {
-        System.exit(0);
+    private void eventoVolver(ActionEvent event) {
+        Navegador.irA(event, Rutas.VISTA_INICIO, "Iniciar Sesion");
     }
 
     

@@ -2,6 +2,7 @@ package SistemaCine.Controlador;
 
 import SistemaCine.Utilidades.Estilos; 
 import SistemaCine.Modelo.Pelicula;
+import SistemaCine.Utilidades.Navegador;
 import SistemaCine.Utilidades.Rutas;
 import javafx.scene.image.Image;
 import java.net.URL;
@@ -50,6 +51,7 @@ public class PruebaBuilderController implements Initializable {
     @FXML private HBox contenedorPeliculas; 
     @FXML private ScrollPane scrollCarrusel;
     @FXML private MenuItem miHistorialEntradas;
+    @FXML private MenuItem miVolver;
     
     @FXML
     
@@ -71,6 +73,11 @@ public class PruebaBuilderController implements Initializable {
         }
     }
     
+    @FXML
+    private void eventoVolver(ActionEvent event) {
+        Stage stage = (Stage) scrollCarrusel.getScene().getWindow();
+        Navegador.cambiarVista(stage, Rutas.VISTA_LOGIN, "Iniciar Sesión");
+    }
     private void abrirSala(Pelicula peliSeleccionada) {
         System.out.println(">>> Click detectado en: " + peliSeleccionada.getTitulo());
         try {
@@ -84,10 +91,19 @@ public class PruebaBuilderController implements Initializable {
             controladorSala.setDatos(peliSeleccionada, "UsuarioActual");
 
             // mostrar la ventana
-            Stage stage = new Stage(); // ventana nueva por el momento, modificar para que sea la misma agregando metodos volver en cada view
-            stage.setScene(new Scene(root));
-            stage.setTitle("Sala: " + peliSeleccionada.getTitulo());
-            stage.show();
+            Stage stageActual = (Stage) scrollCarrusel.getScene().getWindow();
+
+            // 2. CAMBIAMOS LA ESCENA EN LA MISMA VENTANA
+            Scene scene = new Scene(root);
+
+            // (Opcional) Si quieres mantener el estilo oscuro, agrega el CSS aquí también
+            try {
+                scene.getStylesheets().add(getClass().getResource("/estilos/cine.css").toExternalForm());
+            } catch (Exception e) {}
+
+            stageActual.setScene(scene);
+            stageActual.setTitle("Sala: " + peliSeleccionada.getTitulo());
+            stageActual.show();
 
         } catch (Exception ex) {
             ex.printStackTrace();

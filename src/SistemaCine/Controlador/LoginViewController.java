@@ -11,6 +11,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import SistemaCine.Utilidades.LogicaLogin;
+import SistemaCine.Utilidades.Navegador;
+import SistemaCine.Utilidades.Rutas;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -83,7 +85,7 @@ public class LoginViewController implements Initializable {
     }
 
     @FXML
-    private void eventoSalir(ActionEvent event) {
-        btnSalir.setOnAction(e -> System.exit(0));
-    }
+    private void eventoSalir(ActionEvent event) { // O eventoVolver
+        Navegador.irA(event, Rutas.VISTA_INICIO, "Bienvenido a Cine UTN");
+}
 }

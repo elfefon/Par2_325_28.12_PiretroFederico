@@ -1,10 +1,9 @@
 package SistemaCine.Controlador;
 
-import SistemaCine.Utilidades.Estilos; // <--- Importa tu clase
+import SistemaCine.Utilidades.Estilos;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.time.LocalDateTime; // Para la fecha
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
@@ -13,7 +12,6 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -59,7 +57,10 @@ public class SalaViewController implements Initializable {
     
     @FXML
     private void eventoVolver(ActionEvent event) {
-        Navegador.irA(event, Rutas.VISTA_DASHBOARD, "Cine UTN");
+        if (root != null && root.getScene() != null) {
+            Stage stage = (Stage) root.getScene().getWindow();
+            Navegador.cambiarVista(stage, Rutas.VISTA_DASHBOARD, "Cine UTN");
+        }
     }
     
     

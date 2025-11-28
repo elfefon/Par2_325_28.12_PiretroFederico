@@ -14,17 +14,13 @@
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="Usuario">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
+          <Menu mnemonicParsing="false" text="Usuario" />
           <Menu mnemonicParsing="false" text="Ajustes">
             <items>
+              <MenuItem fx:id="miVolver" mnemonicParsing="false" onAction="#eventoVolver" text="Volver" />
               <MenuItem fx:id="miHistorialEntradas" mnemonicParsing="false" onAction="#irAMisEntradas" text="Mis Entradas" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Salir" />
         </menus>
       </MenuBar>
    </top>

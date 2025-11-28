@@ -20,7 +20,7 @@
             <PasswordField fx:id="txtPassword" maxWidth="-Infinity" />
             <Hyperlink fx:id="linkLogin" onAction="#eventoIrALogin" text="Ya tienes una cuenta? ingresa aqui!" />
             <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#eventoRegistrar" text="Crear cuenta" />
-            <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#eventoSalir" prefHeight="25.0" prefWidth="82.0" text="Salir" />
+            <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#eventoVolver" prefHeight="25.0" prefWidth="82.0" text="Volver" />
          </children>
       </VBox>
    </center>
